@@ -1,0 +1,52 @@
+<template name="time">
+      {{#if isInRole 'admin'}}        
+
+
+
+
+   {{#autoForm collection="Timetable" id="quickstring" type="insert"}}
+  
+
+           {{> afQuickField name="day"}}
+
+
+           {{> afQuickField name="description"}}
+
+    
+
+           {{> afQuickField name="lectures"}}
+
+    
+       <!-- the syubmit button-->
+              <button class="btn waves-effect waves-light to_submit blue lighten-1" type="submit" name="action">Submit
+                    <i class="mdi-content-send right"></i>
+              </button>
+  {{/autoForm}} 
+
+
+{{else}}
+
+{{> timetable}}
+{{/if}}
+</template>
+
+<template name="timeupdate">
+       {{#autoForm collection="Timetable" id="quickstring" type="update" doc = this}}
+  
+
+           {{> afQuickField name="day"}}
+
+
+           {{> afQuickField name="description"}}
+
+    
+
+           {{> afQuickField name="lectures"}}
+
+    
+       <!-- the syubmit button-->
+              <button class="btn waves-effect waves-light to_submit blue lighten-1" type="submit" name="action">Submit
+                    <i class="mdi-content-send right"></i>
+              </button>
+  {{/autoForm}} 
+</template>

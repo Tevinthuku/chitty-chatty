@@ -1,0 +1,44 @@
+<template name="layout">
+    
+<div class="navbar-fixed">
+  <nav class=" blue darken-1">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">bmcs</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{pathFor route="timetable"}}">Timetable</a></li>
+        <li><a href="{{pathFor route="viewnotes"}}">Notes</a></li>
+        {{#if isInRole 'admin'}}   
+        <li><a href="{{pathFor route = "notescreate"}}">Create Notes</a></li>
+        <li><a href="{{pathFor route = "time" }}">Create Timetable</a></li>
+        {{/if}}
+        
+        {{#if currentUser}}
+        <li class="logout"><a href="#">Log Out</a></li>
+        
+        {{else}}
+        <li><a href="{{pathFor route="login"}}">Log In</a></li>
+        {{/if}}
+      </ul>
+      
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="{{pathFor route="timetable"}}">Timetable</a></li>
+        <li><a href="{{pathFor route="viewnotes"}}">Notes</a></li>
+        {{#if isInRole 'admin'}}   
+        <li><a href="{{pathFor route = "notescreate"}}">Create Notes</a></li>
+        <li><a href="{{pathFor route = "time" }}">Create Timetable</a></li>
+        {{/if}}
+        
+        {{#if currentUser}}
+        <li class="logout"><a href="#">Log Out</a></li>
+        
+        {{else}}
+        <li><a href="{{pathFor route="login"}}">Log In</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+</div>  
+
+{{> yield}}
+</template>
