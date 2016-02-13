@@ -9,13 +9,16 @@
                         </div>
                         <div class="card-content">
                           <span class="card-title activator grey-text text-darken-4">{{day}}<i class="mdi-image-blur-on secondary-content right"></i></span>
+                          
+                          <p>{{description}}</p>
+                          
                           {{#if isOwner}}  
                           <p><a href="{{pathFor route="timeupdate"}}">Update</a></p>
                           {{/if}}
                         </div>
                         <div class="card-reveal">
                           <span class="card-title grey-text text-darken-4">{{day}}<i class="material-icons right">close</i></span>
-                           <p>{{description}}</p>
+                           
                            
                             <table>
                                     <thead>
